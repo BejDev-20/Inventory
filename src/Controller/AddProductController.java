@@ -284,17 +284,17 @@ public class AddProductController implements Initializable {
         productPartPriceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         Pattern patternOnlyNumbers = Pattern.compile("\\d*");
-        TextFormatter formatMaxTxt = new TextFormatter(change -> {
+        TextFormatter formatMaxTxt = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
             return patternOnlyNumbers.matcher(change.getControlNewText()).matches() ? change : null;
         });
-        TextFormatter formatMinTxt = new TextFormatter(change -> {
+        TextFormatter formatMinTxt = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
             return patternOnlyNumbers.matcher(change.getControlNewText()).matches() ? change : null;
         });
         productMaxTxt.setTextFormatter(formatMaxTxt);
         productMinTxt.setTextFormatter(formatMinTxt);
 
         Pattern patternDouble = Pattern.compile("\\d*|\\d+\\.\\d*");
-        TextFormatter formatPrice = new TextFormatter(change -> {
+        TextFormatter formatPrice = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
             return patternDouble.matcher(change.getControlNewText()).matches() ? change : null;
         });
         productPriceCostTxt.setTextFormatter(formatPrice);

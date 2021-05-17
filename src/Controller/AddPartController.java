@@ -178,17 +178,17 @@ public class AddPartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Pattern patternOnlyNumbers = Pattern.compile("\\d*");
-        TextFormatter formatMaxTxt = new TextFormatter(change -> {
+        TextFormatter formatMaxTxt = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
             return patternOnlyNumbers.matcher(change.getControlNewText()).matches() ? change : null;
         });
-        TextFormatter formatMinTxt = new TextFormatter(change -> {
+        TextFormatter formatMinTxt = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
             return patternOnlyNumbers.matcher(change.getControlNewText()).matches() ? change : null;
         });
         partMinTxt.setTextFormatter(formatMaxTxt);
         partMaxTxt.setTextFormatter(formatMinTxt);
 
         Pattern patternDouble = Pattern.compile("\\d*|\\d+\\.\\d*");
-        TextFormatter formatPrice = new TextFormatter(change -> {
+        TextFormatter formatPrice = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
             return patternDouble.matcher(change.getControlNewText()).matches() ? change : null;
         });
         partPriceCostTxt.setTextFormatter(formatPrice);
