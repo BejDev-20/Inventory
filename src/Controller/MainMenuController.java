@@ -14,7 +14,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -24,8 +23,8 @@ import java.util.ResourceBundle;
  * This is a main controller that is responsible for the main menu of the app. Includes tables of all the parts and
  * products, includes search by id/name functionality for each. Provides functionality to add, modify, delete parts
  * and products.
- *
- * @author Iulia Bejsovec StudentID: 001248083
+ * @author Iulia Bejsovec
+ * @version 12/2020
  */
 public class MainMenuController implements Initializable {
     public Button exitBttn;
@@ -71,7 +70,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Opens a window with text fields to fill out to add a part to the inventory
-     *
      * @param event event that prompted the change of the scene to Add Part
      */
     @FXML
@@ -83,7 +81,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Opens a window with text fields to fill out to add a product to the inventory
-     *
      * @param event event that prompted the change of the scene to Add Product
      */
     @FXML
@@ -96,7 +93,6 @@ public class MainMenuController implements Initializable {
     /**
      * Deletes the selected part in the table after confirmation through an Alert. The scene changes to the main
      * menu after a successful delete. Nothing happens if no part is selected.
-     *
      * @param event event that triggers the deletion of the part
      */
     @FXML
@@ -118,7 +114,6 @@ public class MainMenuController implements Initializable {
      * Deletes the selected product in the table after confirmation through an Alert. The scene changes to the main
      * menu after a successful delete. Nothing happens if no product is
      * selected.
-     *
      * @param event event that triggers the deletion of the product
      */
     @FXML
@@ -147,7 +142,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Exits app after the action is triggered
-     *
      * @param event event that triggers the closure of the program
      */
     @FXML
@@ -158,7 +152,6 @@ public class MainMenuController implements Initializable {
     /**
      * Opens a window with text fields filled out with part's information (id, name, stock, price, min and max,
      * machineId/company name) to modify. Allows to save changes or discard them
-     *
      * @param event event that triggers the modify window to open up
      */
     @FXML
@@ -183,7 +176,6 @@ public class MainMenuController implements Initializable {
     /**
      * Opens a window with text fields filled out with part's information (id, name, stock, price, min and max,
      * machineId/company name) to modify. Allows to save changes or discard them
-     *
      * @param event event that triggers the modify window to open up
      */
     @FXML
@@ -207,7 +199,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Filters the part table by the part ID or name provided
-     *
      * @param text text (id or name) to filter the part table by
      */
     private void filterPart(String text) {
@@ -215,8 +206,6 @@ public class MainMenuController implements Initializable {
             int id = Integer.parseInt(text);
             ObservableList<Part> tempList = searchPartById(id, Inventory.getAllParts());
             fillPartTable(tempList);
-            // catches the NumberFormatException if the text passed doesn't consist of digits only and sets up the search
-            // by the name
         } catch (NumberFormatException e) {
             ObservableList<Part> tempList = searchPartByName(text, Inventory.getAllParts());
             fillPartTable(tempList);
@@ -225,7 +214,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Filters the product table by the part ID or name provided
-     *
      * @param text text (id or name) to filter the product table by
      */
     public void filterProduct(String text) {
@@ -233,8 +221,6 @@ public class MainMenuController implements Initializable {
             int id = Integer.parseInt(text);
             ObservableList<Product> tempList = searchProductById(id, Inventory.getAllProducts());
             fillProductTable(tempList);
-            // catches the NumberFormatException if the text passed doesn't consist of digits only and sets up the search
-            // by the name
         } catch (NumberFormatException e) {
             ObservableList<Product> tempList = searchProductByName(text, Inventory.getAllProducts());
             fillProductTable(tempList);
@@ -244,7 +230,6 @@ public class MainMenuController implements Initializable {
     /**
      * Searches all parts in the inventory and returns a list of the parts whose id partially or fully match the id
      * provided
-     *
      * @param id   to match all the parts' ids to
      * @param list list of all the parts to search through
      * @return a list of all the parts whose ids partially or fully match the id provided
@@ -262,7 +247,6 @@ public class MainMenuController implements Initializable {
     /**
      * Searches all parts in the inventory and returns a list of the parts whose name partially or fully match the name
      * provided
-     *
      * @param name name to match all the parts' names to
      * @param list list of all the parts to search through
      * @return a list of all the parts whose names partially or fully match the name provided
@@ -280,7 +264,6 @@ public class MainMenuController implements Initializable {
     /**
      * Searches all products in the inventory and returns a list of the products whose ids partially or fully match the
      * id provided
-     *
      * @param id   to match all the products' ids to
      * @param list list of all the products to search through
      * @return a list of all the products whose ids partially or fully match the id provided
@@ -298,7 +281,6 @@ public class MainMenuController implements Initializable {
     /**
      * Searches all parts in the inventory and returns a list of the products whose name partially or fully match the
      * name provided
-     *
      * @param name name to match all the products' names to
      * @param list list of all the products to search through
      * @return a list of all the products whose names partially or fully match the name provided
@@ -315,7 +297,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Fills the part table's rows and columns with the given list data
-     *
      * @param list list to populate the data from
      */
     private void fillPartTable(ObservableList<Part> list) {
@@ -331,7 +312,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Fills the product table's rows and columns with the given list data
-     *
      * @param list list to populate the data from
      */
     private void fillProductTable(ObservableList<Product> list) {
@@ -347,7 +327,6 @@ public class MainMenuController implements Initializable {
 
     /**
      * Retrieves the stage from the given path from the given event
-     *
      * @param FXMLPath path of the FXML document to set up the next scene
      * @param event    that triggers the action
      * @return the stage from the given path and event
@@ -367,7 +346,6 @@ public class MainMenuController implements Initializable {
      * Called to initialize a controller after its root element has been completely processed
      * Fills the parts and products tables with the data and sets up listeners for the search text areas for parts and
      * product tables.
-     *
      * @param url       the location used to resolve relative paths for the root object, or null if the location is not known
      * @param resources the resources used to localize the root object, or null if the root object was not localized
      */

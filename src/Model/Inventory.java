@@ -6,8 +6,8 @@ import javafx.collections.ObservableList;
 /**
  * Keeps track of all inventory, all parts and products. Allows to add, delete, update parts and products. Provides
  * functionality to retrieve all the parts and the products in the inventory individually and in bulk.
- *
- * @author Iulia Bejsovec StudentID: 001248083
+ * @author Iulia Bejsovec
+ * @version 12/2020
  */
 public class Inventory {
     /* List of all parts in the inventory */
@@ -21,7 +21,6 @@ public class Inventory {
 
     /**
      * Adds the part to the list of all parts and updates the part id for the next part
-     *
      * @param newPart Part to add to the inventory
      */
     public static void addPart(Part newPart) {
@@ -31,7 +30,6 @@ public class Inventory {
 
     /**
      * Adds the product to the list of all products and updates the product id for the next product
-     *
      * @param newProduct Product to add to the inventory
      */
     public static void addProduct(Product newProduct) {
@@ -41,7 +39,6 @@ public class Inventory {
 
     /**
      * Retrieves the part associated with the given part ID
-     *
      * @param partId Part ID of the part to be retrieved
      * @return Part associated with the given part ID
      */
@@ -56,7 +53,6 @@ public class Inventory {
 
     /**
      * Retrieves the product associated with the given product ID
-     *
      * @param productId Product ID of the part to be retrieved
      * @return Product associated with the given product ID
      */
@@ -71,7 +67,6 @@ public class Inventory {
 
     /**
      * Updates the part with the given part ID to the selected part
-     *
      * @param partId  Part ID of the part to be updated
      * @param newPart Part to update the part to
      */
@@ -85,7 +80,6 @@ public class Inventory {
 
     /**
      * Updates the product with the given product ID to the selected product
-     *
      * @param productId  Product ID of the product to be updated
      * @param newProduct Product to update the product to
      */
@@ -99,7 +93,6 @@ public class Inventory {
 
     /**
      * Deletes the provided part from the list of all parts and returns true
-     *
      * @param selectedPart part to be deleted
      * @return true if the action executed successfully
      */
@@ -111,7 +104,6 @@ public class Inventory {
     /**
      * Deletes the provided product if there are no parts associated with it from the list of all products and returns
      * true if the action was successful, false otherwise
-     *
      * @param selectedProduct product to be deleted
      * @return true if the action executed successfully, false otherwise
      */
@@ -125,7 +117,6 @@ public class Inventory {
 
     /**
      * Retrieves a list of all the parts in the inventory
-     *
      * @return a list of all the parts in the inventory
      */
     public static ObservableList<Part> getAllParts() {
@@ -134,7 +125,6 @@ public class Inventory {
 
     /**
      * Retrieves a list of all the products in the inventory
-     *
      * @return a list of all the products in the inventory
      */
     public static ObservableList<Product> getAllProducts() {
@@ -143,7 +133,6 @@ public class Inventory {
 
     /**
      * Retrieves the part ID for the next part added
-     *
      * @return part ID for the next part added
      */
     public static int getPartId() {
@@ -152,7 +141,6 @@ public class Inventory {
 
     /**
      * Retrieves the product ID for the next part added
-     *
      * @return product ID for the next part added
      */
     public static int getProductId() {

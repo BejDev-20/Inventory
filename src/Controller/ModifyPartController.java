@@ -5,7 +5,6 @@ import Model.Inventory;
 import Model.Outsourced;
 import Model.Part;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,7 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -25,15 +23,13 @@ import java.util.regex.Pattern;
  * This controller is responsible for the window which is used to modify a part of the Inventory and saving the changes.
  * The window allows to modify name, stock, price, max and min, MachineID/Company name of the part. Some text fields are
  * limited to digit-only inputs to prevent undesirable input values.
- *
- * @author Iulia Bejsovec StudentID: 001248083
+ * @author Iulia Bejsovec
+ * @version 12/2020
  */
 public class ModifyPartController implements Initializable {
 
-
     private Stage stage;
     private Parent scene;
-
     @FXML
     private ToggleGroup sourceTG;
     @FXML
@@ -68,7 +64,6 @@ public class ModifyPartController implements Initializable {
     /**
      * Cancels the modification of the part and returns to the main menu. Prompts a confirmation alert by the user to
      * confirm the cancellation
-     *
      * @param event event to prompt the cancellation
      */
     @FXML
@@ -85,7 +80,6 @@ public class ModifyPartController implements Initializable {
 
     /**
      * Changes the label to the "MachineID" when the radio button is toggled to the In-House
-     *
      * @param event event that triggers the change in the label, toggling the radio button
      */
     @FXML
@@ -95,7 +89,6 @@ public class ModifyPartController implements Initializable {
 
     /**
      * Changes the label to the "Company Name" when the radio button is toggled to the Outsourced
-     *
      * @param event event that triggers the change in the label, toggling the radio button
      */
     @FXML
@@ -105,7 +98,6 @@ public class ModifyPartController implements Initializable {
 
     /**
      * Retrieves the stage from the given path and event
-     *
      * @param FXMLPath path of the FXML document to set up the next scene
      * @param event    that triggers the action
      * @return the stage from the given path and event
@@ -115,7 +107,6 @@ public class ModifyPartController implements Initializable {
         try {
             scene = FXMLLoader.load(getClass().getResource(FXMLPath));
             stage.setScene(new Scene(scene));
-            // catches an IOException for the .load() method if it is not possible to load the hierarchy from the FXML doc
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -124,7 +115,6 @@ public class ModifyPartController implements Initializable {
 
     /**
      * Uses the attributes of the provided part to set the fields of the window
-     *
      * @param part part whose attributes are populated in the modify part form
      */
     public void savePartData(Part part) {
@@ -177,8 +167,6 @@ public class ModifyPartController implements Initializable {
                     Inventory.updatePart(newPart.getId(), newPart);
                     stage = getStage("../View/MainMenu.fxml", event);
                     stage.show();
-                    // catches IllegalArgumentException that is thrown if any of the input text fields have improper values
-                    // brings up an alert reminder of the format of the fields and its values
                 } catch (IllegalArgumentException e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Incorrect Input");
@@ -197,7 +185,6 @@ public class ModifyPartController implements Initializable {
      * Called to initialize a controller after its root element has been completely processed
      * Sets up input limitations for the min, max, price text fields to be digits (and period) only, adds listeners to
      * the save button.
-     *
      * @param url            location used to resolve relative paths for the root object, or null if the location is not known
      * @param resourceBundle resources used to localize the root object, or null if the root object was not localized
      */

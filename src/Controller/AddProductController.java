@@ -13,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -30,7 +29,8 @@ import java.util.regex.Pattern;
  * be removed from the product through "remove assocated part" button. Product will be saved as long as all the fields
  * are not empty (prompts Alert otherwise). Cancellation prompts an Alert to confirm the cancellation.
  *
- * @author Iulia Bejsovec StudentID: 001248083
+ * @author Iulia Bejsovec
+ * @version 12/2020
  */
 public class AddProductController implements Initializable {
 
@@ -82,7 +82,6 @@ public class AddProductController implements Initializable {
     /**
      * Cancels the creation of the product and returns to the main menu. Prompts a confirmation alert by the user to
      * confirm the cancellation
-     *
      * @param event event to prompt the cancellation
      */
     @FXML
@@ -99,7 +98,6 @@ public class AddProductController implements Initializable {
 
     /**
      * Adds a selected part from the all parts table to the associated parts table
-     *
      * @param event event that triggers the addition of the part to the associated table
      */
     @FXML
@@ -109,6 +107,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     * Removes a selected part from the all parts table
+     * @param event event that triggers the addition of the part to the associated table
+     */
     @FXML
     private void onActionRemovePart(ActionEvent event) {
         if (!(associatedPartTable.getSelectionModel().isEmpty())) {
@@ -118,7 +120,6 @@ public class AddProductController implements Initializable {
 
     /**
      * Retrieves the stage from the given path and event
-     *
      * @param FXMLPath path of the FXML document to set up the next scene
      * @param event    that triggers the action
      * @return the stage from the given path and event
@@ -128,7 +129,6 @@ public class AddProductController implements Initializable {
         try {
             scene = FXMLLoader.load(getClass().getResource(FXMLPath));
             stage.setScene(new Scene(scene));
-            // catches an IOException for the .load() method if it is not possible to load the hierarchy from the FXML doc
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -162,8 +162,6 @@ public class AddProductController implements Initializable {
                         Inventory.addProduct(newProduct);
                         stage = getStage("../View/MainMenu.fxml", event);
                         stage.show();
-                        // catches IllegalArgumentException that is thrown if any of the input text fields have improper values
-                        // brings up an alert reminder of the format of the fields and its values
                     } catch (IllegalArgumentException e) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Incorrect Input");
@@ -179,7 +177,6 @@ public class AddProductController implements Initializable {
 
     /**
      * Adds all the associated parts to the given product
-     *
      * @param product to add all the parts to
      */
     private void associateParts(Product product) {
@@ -206,7 +203,6 @@ public class AddProductController implements Initializable {
 
     /**
      * Filters the part table by the part ID or name provided
-     *
      * @param text text (id or name) to filter the part table by
      */
     private void filterPart(String text) {
@@ -214,8 +210,6 @@ public class AddProductController implements Initializable {
             int id = Integer.parseInt(text);
             ObservableList<Part> tempList = searchPartById(id, Inventory.getAllParts());
             fillPartTable(tempList);
-            // catches the NumberFormatException if the text passed doesn't consist of digits only and sets up the search
-            // by the name
         } catch (NumberFormatException e) {
             ObservableList<Part> tempList = searchPartByName(text, Inventory.getAllParts());
             fillPartTable(tempList);
@@ -225,7 +219,6 @@ public class AddProductController implements Initializable {
     /**
      * Searches all parts in the inventory and returns a list of the parts whose id partially or fully match the id
      * provided
-     *
      * @param id   to match all the parts' ids to
      * @param list list of all the parts to search through
      * @return a list of all the parts whose ids partially or fully match the id provided
@@ -243,7 +236,6 @@ public class AddProductController implements Initializable {
     /**
      * Searches all parts in the inventory and returns a list of the parts whose name partially or fully match the name
      * provided
-     *
      * @param name name to match all the parts' names to
      * @param list list of all the parts to search through
      * @return a list of all the parts whose names partially or fully match the name provided
@@ -260,7 +252,6 @@ public class AddProductController implements Initializable {
 
     /**
      * Fills the part table's rows and columns with the given list data
-     *
      * @param list list to populate the data from
      */
     private void fillPartTable(ObservableList<Part> list) {

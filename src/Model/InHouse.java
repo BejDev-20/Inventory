@@ -3,8 +3,8 @@ package Model;
 /**
  * Represents a part that is made in-house. Part has a unique ID, name, price, stock availability, minimum and maximum
  * values, machine ID.
- *
- * @author Iulia Bejsovec StudentID: 001248083
+ * @author Iulia Bejsovec
+ * @version 12/2020
  */
 public class InHouse extends Part {
     /* Machine ID of the part that is made in-house*/
@@ -12,7 +12,6 @@ public class InHouse extends Part {
 
     /**
      * Constructor to create an InHouse part
-     *
      * @param id        unique id of the part
      * @param name      name of the part
      * @param price     price per one unit (part)
@@ -30,7 +29,6 @@ public class InHouse extends Part {
     /**
      * Checks that given arguments are correct. Name cannot consist only of numbers, min must be less than max,
      * stock must be between min and max
-     *
      * @param name  name of the part
      * @param min   minimum number of parts
      * @param max   maximum number of parts
@@ -44,7 +42,6 @@ public class InHouse extends Part {
 
     /**
      * Checks that given arguments are correct. Min must be less than max, stock must be between min and max
-     *
      * @param min   minimum number of parts
      * @param max   maximum number of parts
      * @param stock inventory availability of the part
@@ -58,14 +55,12 @@ public class InHouse extends Part {
 
     /**
      * Checks that given argument is correct. Name cannot consist only of numbers
-     *
      * @param name name of the part to check
      * @throws IllegalArgumentException if name consists only of numbers
      */
     private void checkName(String name) {
         try {
             Integer.parseInt(name);
-            // catches NumberFormatException if parsing to integer is unsuccessful
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException();
         }
@@ -73,7 +68,6 @@ public class InHouse extends Part {
 
     /**
      * Sets or changes the Machine ID of the part
-     *
      * @param machineId Machine ID to change the current to
      */
     public void setMachineId(int machineId) {
@@ -82,7 +76,6 @@ public class InHouse extends Part {
 
     /**
      * Retrieves the part's Machine ID
-     *
      * @return part's Machine ID
      */
     public int getMachineId() {
@@ -92,7 +85,6 @@ public class InHouse extends Part {
     /**
      * Compares two objects if they belong to the same class and returns true if the objects are equal, otherwise
      * false
-     *
      * @param object Object to compare this part to
      * @return true if the objects are equal, false otherwise
      */

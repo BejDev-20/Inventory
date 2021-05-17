@@ -13,7 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -25,8 +24,8 @@ import java.util.regex.Pattern;
  * This controller is responsible for the window which is used to add a part to the Inventory. The window allows
  * to input name, stock, price, max and min, MachineID/Company name of the part. Some text fields are limited to
  * digit-only inputs to prevent undesirable input values.
- *
- * @author Iulia Bejsovec StudentID: 001248083
+ * @author Iulia Bejsovec
+ * @version 12/2020
  */
 public class AddPartController implements Initializable {
 
@@ -63,7 +62,6 @@ public class AddPartController implements Initializable {
     /**
      * Cancels the creation of the part and returns to the main menu. Prompts a confirmation alert by the user to
      * confirm the cancellation
-     *
      * @param event event to prompt the cancellation
      */
     @FXML
@@ -80,7 +78,6 @@ public class AddPartController implements Initializable {
 
     /**
      * Changes the label to the "MachineID" when the radio button is toggled to the In-House
-     *
      * @param event event that triggers the change in the label, toggling the radio button
      */
     @FXML
@@ -90,7 +87,6 @@ public class AddPartController implements Initializable {
 
     /**
      * Changes the label to the "Company Name" when the radio button is toggled to the Outsourced
-     *
      * @param event event that triggers the change in the label, toggling the radio button
      */
     @FXML
@@ -100,7 +96,6 @@ public class AddPartController implements Initializable {
 
     /**
      * Retrieves the stage from the given path and event
-     *
      * @param FXMLPath path of the FXML document to set up the next scene
      * @param event    that triggers the action
      * @return the stage from the given path and event
@@ -171,7 +166,6 @@ public class AddPartController implements Initializable {
      * Called to initialize a controller after its root element has been completely processed
      * Sets up input limitations for the min, max, price text fields to be digits (and period) only, adds listeners to
      * the save button
-     *
      * @param url            the location used to resolve relative paths for the root object, or null if the location is not known
      * @param resourceBundle the resources used to localize the root object, or null if the root object was not localized
      */

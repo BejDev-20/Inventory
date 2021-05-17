@@ -3,8 +3,8 @@ package Model;
 /**
  * Represents a part that is outsourced. Part has a unique ID, name, price, stock availability, minimum and maximum
  * values, company name.
- *
- * @author Iulia Bejsovec StudentID: 001248083
+ * @author Iulia Bejsovec
+ * @version 12/2020
  */
 public class Outsourced extends Part {
     /* Name of the company the part has been outsourced from */
@@ -12,7 +12,6 @@ public class Outsourced extends Part {
 
     /**
      * Constructor to create an Outsourced part
-     *
      * @param id          unique id of the part
      * @param name        name of the part
      * @param price       price per one unit (part)
@@ -30,7 +29,6 @@ public class Outsourced extends Part {
     /**
      * Checks that all values of the arguments are allowed. Name and company name cannot consists only of numbers,
      * min and max cannot equal to 0 and min cannot be bigger than max. Stock must be between min and max
-     *
      * @param name        name of the part
      * @param min         minimum value for the number of parts
      * @param max         maximum value for the number of parts
@@ -45,7 +43,6 @@ public class Outsourced extends Part {
 
     /**
      * Checks that given arguments are correct. Company name cannot consist only numbers
-     *
      * @param companyName name of the company supplying the part
      * @throws IllegalArgumentException if the company name consists only of numbers
      */
@@ -59,7 +56,6 @@ public class Outsourced extends Part {
 
     /**
      * Checks that given arguments are correct. Min must be less than max, stock must be between min and max
-     *
      * @param min   minimum number of parts
      * @param max   maximum number of parts
      * @param stock inventory availability of the part
@@ -73,14 +69,12 @@ public class Outsourced extends Part {
 
     /**
      * Checks that given argument is correct. Name cannot consist only of numbers
-     *
      * @param name name of the part to check
      * @throws IllegalArgumentException if name consists only of numbers
      */
     private void checkName(String name) {
         try {
             Integer.parseInt(name);
-            // catches NumberFormatException if parsing to integer is unsuccessful
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException();
         }
@@ -88,7 +82,6 @@ public class Outsourced extends Part {
 
     /**
      * Sets or changes the company name the part has been outsourced to
-     *
      * @param companyName Name of the company to change the current to
      */
     public void setCompanyName(String companyName) {
@@ -97,7 +90,6 @@ public class Outsourced extends Part {
 
     /**
      * Retrieves the company name the part has been outsourced to
-     *
      * @return Company name the part has been outsourced to
      */
     public String getCompanyName() {
@@ -107,7 +99,6 @@ public class Outsourced extends Part {
     /**
      * Compares two objects if they belong to the same class and returns true if the objects are equal, otherwise
      * false
-     *
      * @param object Object to compare this part to
      * @return true if the objects are equal, false otherwise
      */
