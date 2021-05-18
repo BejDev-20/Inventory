@@ -27,15 +27,15 @@ Incorrect input handling has also been implemented by design and is as follows:
 
 ## GUI
 
-Main menu window
+Main menu window. It includes 2 main views - table of all parts and table of all products. Text fields in the right corners of each allow to filter that table by parts/products names. Each view allows to add/modify/delete an item from the associated table. 
 
 <img src="src/img/MainWindow.PNG">
 
-Add part window
+Add/Update part window. It includes the type (In-House and Outsourced) of the part and other associated information to the item. All input is validated followed by an error message if it is invalid. Cancel button is followed by a confirmation window to verify the choice to discard the data.
 
 <img src="src/img/AddPart.PNG">
 
-Add product window
+Add/Update product window. It includes all product information and parts in a form of two tables: available parts and associated with the product parts. All input is validated followed by an error message if it is invalid. Cancel button is followed by a confirmation window to verify the choice to discard the data.
 
 <img src="src/img/AddProduct.PNG">
 
