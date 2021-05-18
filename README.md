@@ -31,19 +31,19 @@ Incorrect input handling has also been implemented by design and is as follows:
 
 <img src="src/img/MainWindow.PNG">
 
-Add/Update part window. It includes the type (In-House and Outsourced) of the part and other associated information to the item. All input is validated followed by an error message if it is invalid. Cancel button is followed by a confirmation window to verify the choice to discard the data.
+<b>Add/Update part window</b>. It includes the type (In-House and Outsourced) of the part and other associated information to the item. All input is validated followed by an error message if it is invalid. Cancel button is followed by a confirmation window to verify the choice to discard the data.
 
 <img src="src/img/AddPart.PNG">
 
-Add/Update product window. It includes all product information and parts in a form of two tables: available parts and associated with the product parts. All input is validated followed by an error message if it is invalid. Cancel button is followed by a confirmation window to verify the choice to discard the data.
+<b>Add/Update product window</b>. It includes all product information and parts in a form of two tables: available parts and associated with the product parts. All input is validated followed by an error message if it is invalid. Cancel button is followed by a confirmation window to verify the choice to discard the data.
 
 <img src="src/img/AddProduct.PNG">
 
-Confirmation window
+<b>Confirmation window</b>
 
 <img src="src/img/Confirmation.PNG">
 
-Error window
+<b>Error window</b>
 
 <img src="src/img/ErrorMessage.PNG">
 
