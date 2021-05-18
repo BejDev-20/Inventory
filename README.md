@@ -27,7 +27,7 @@ Incorrect input handling has also been implemented by design and is as follows:
 
 ## GUI
 
-Main menu window. It includes 2 main views - table of all parts and table of all products. Text fields in the right corners of each allow to filter that table by parts/products names. Each view allows to add/modify/delete an item from the associated table. 
+<b>Main menu window</b>. It includes 2 main views - table of all parts and table of all products. Text fields in the right corners of each allow to filter that table by parts/products names. Each view allows to add/modify/delete an item from the associated table. 
 
 <img src="src/img/MainWindow.PNG">
 
