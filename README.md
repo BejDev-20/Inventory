@@ -39,11 +39,11 @@ Incorrect input handling has also been implemented by design and is as follows:
 
 <img src="src/img/AddProduct.PNG">
 
-<b>Confirmation window</b>
+<b>Confirmation window</b>. Triggered by ```Cancel``` button is clicked on add/update part or product window.
 
 <img src="src/img/Confirmation.PNG">
 
-<b>Error window</b>
+<b>Error window</b>.  Triggered by ```Save``` button if any of the user input is invalid on add/update part or product window.
 
 <img src="src/img/ErrorMessage.PNG">
 
