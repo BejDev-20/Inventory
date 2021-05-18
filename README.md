@@ -1,4 +1,4 @@
-# Inventory
+# Inventory Management System
 
 ## Description
 
